@@ -25,19 +25,19 @@ module Unicorn
         if @_autoscale_last_scaling < Time.now.to_f - 10
           if @_autoscale_raindrop[RAINDROP_OFFSET] == INCREMENT
             if self.worker_processes < self.autoscale_max_workers
-              logger.info("Auto scaling: up")
+              logger.info("Auto scaling: UP")
 
               self.worker_processes += 1
             else
-              logger.warn('Auto scaling: unable to scale up since maximum number of workers already reached!')
+              logger.warn('Auto scaling: Unable to scale up since maximum number of workers already reached!')
             end
           elsif @_autoscale_raindrop[RAINDROP_OFFSET] == DECREMENT
             if self.worker_processes > self.autoscale_min_workers
-              logger.info('Auto scaling: down')
+              logger.info('Auto scaling: DOWN')
 
               self.worker_processes -= 1
             else
-              logger.warn('Auto scaling: unable to scale down since minimum number of workers already reached!')
+              logger.warn('Auto scaling: Unable to scale down since minimum number of workers already reached!')
             end
           end
 
