@@ -1,15 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'unicorn/auto_scaling/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'unicorn-autoscaling'
-  spec.version       = '0.0.1'
+  spec.version       = Unicorn::AutoScaling::VERSION
   spec.authors       = ['Florian Schwab']
   spec.email         = ['me@ydkn.de']
-  spec.summary       = %q(TODO: Write a short summary. Required.)
-  spec.description   = %q(TODO: Write a longer description. Optional.)
-  spec.homepage      = ''
+  spec.summary       = %q(Auto-scaling for the Unicorn HTTP server)
+  spec.description   = %q(Auto-scaling for the Unicorn HTTP server)
+  spec.homepage      = 'https://github.com/ydkn/unicorn-autoscaling'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
